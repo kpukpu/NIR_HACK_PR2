@@ -1,0 +1,25 @@
+.book-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 카드들이 왼쪽부터 정렬되도록 설정 */
+    padding: 1rem;
+}
+
+.book-list-container > div {
+    flex: 0 0 300px; /* 기본 카드의 고정 너비 설정 */
+    margin: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 660px) {
+    .book-list-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .book-list-container > div {
+        flex: 0 0 100%;
+        margin: 0.5rem 0;
+    }
+}

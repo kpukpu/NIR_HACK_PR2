@@ -1,15 +1,69 @@
-.book-form {
-    @apply max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md;
+.container {
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-.form-group {
-    @apply mb-4;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
-.form-group label {
-    @apply block mb-1 text-sm font-medium text-gray-700;
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 100%; /* 고정된 크기를 사용하기 위해 100% 너비 */
+    max-width: 300px; /* 카드의 최대 너비를 고정 */
 }
 
-.form-value {
-    @apply mt-1 block w-full px-3 py-2 bg-gray-50 text-gray-700 border border-gray-300 rounded-md shadow-sm;
+.card:hover {
+    transform: scale(1.05);
 }
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.book-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-author, .book-publisher, .book-publication-date {
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.book-availability {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.book-availability.available {
+    color: #38a169;
+}
+
+.book-availability.unavailable {
+    color: #e53e3e;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gray-500 {
+    color: #a0aec0;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+

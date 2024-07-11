@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getBooks } from '../../data/Get';
-import Form from '../Form/Form'
-
+import Form from '../Form/Form';
+import './BookList.css'; // 추가된 스타일을 사용하기 위해 import
 
 const BookList = () => {
 
@@ -20,34 +20,45 @@ const BookList = () => {
             author: 'Harper Lee',
             publisher: 'J.B. Lippincott & Co.',
             publication_date: 1960,
+            availability: false
+        },
+        {
+            book_number: 3,
+            book_name: '19841',
+            author: 'George Orwel1l',
+            publisher: 'Secker & W1arburg',
+            publication_date: 19491,
             availability: true
+        },
+        {
+            book_number: 4,
+            book_name: 'To Kill a Mockingbird1',
+            author: 'Harper Lee1',
+            publisher: 'J.B. Lippinco1tt & Co.',
+            publication_date: 19601,
+            availability: false
         }
     ];
 
-
     const [books, setBooks] = useState(initialBooks);
 
-    /*useEffect(() => {
-        async function fetchData() {
-            try {
-                const result = await getBooks();
-                setBooks(result);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchData();
-    }, []);
-*/
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         try {
+    //             const result = await getBooks();
+    //             setBooks(result);
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     }
+    //     fetchData();
+    // }, []);
 
     return (
-        <div>
-            <h1>Books List</h1>
-            <ul>
-                {books.map(book => (
-                    <Form book={book} />
-                ))}
-            </ul>
+        <div className="book-list-container">
+            {books.map((book, index) => (
+                <Form key={index} book={book} />
+            ))}
         </div>
     );
 };
