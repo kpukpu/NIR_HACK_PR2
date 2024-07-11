@@ -3,20 +3,14 @@
     padding: 2rem 1rem;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
 .card {
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
-    width: 100%; /* 고정된 크기를 사용하기 위해 100% 너비 */
-    max-width: 300px; /* 카드의 최대 너비를 고정 */
+    width: 100%;
+    max-width: 100%;
 }
 
 .card:hover {
@@ -66,4 +60,3 @@
 .mt-8 {
     margin-top: 2rem;
 }
-

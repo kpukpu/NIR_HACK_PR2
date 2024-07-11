@@ -55,10 +55,13 @@ const BookList = () => {
     // }, []);
 
     return (
-        <div className="book-list-container">
-            {books.map((book, index) => (
-                <Form key={index} book={book} />
-            ))}
+        <div className="book-list-wrapper">
+            <h1 className="book-list-title">Book List</h1>
+            <div className="book-list-container">
+                {books.map((book, index) => (
+                    <Form key={index} book={book} />
+                ))}
+            </div>
         </div>
     );
 };
