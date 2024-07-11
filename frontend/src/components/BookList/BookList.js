@@ -40,25 +40,35 @@ const BookList = () => {
         }
     ];
 
-    const [books, setBooks] = useState(initialBooks);
+    const [books, setBooks] = useState([]);
+    //setBooks(initialBooks);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             const result = await getBooks();
-    //             setBooks(result);
-    //         } catch (error) {
-    //             console.error(error);
-    //         }
-    //     }
-    //     fetchData();
-    // }, []);
+    useEffect(() => {
+         async function fetchData() {
+             try {
+                 const result = await getBooks();
+                 setBooks(result);
+             } catch (error) {
+                 console.error(error);
+             }
+         }
+         fetchData()
+             .then(() => {
+                 console.log("data fetched successfully");
+             })
+             .catch(error => {
+                 console.error("Failed to fetch data:", error);
+             });
+    }, []);
 
     return (
-        <div className="book-list-container">
-            {books.map((book, index) => (
-                <Form key={index} book={book} />
-            ))}
+        <div className="book-list-wrapper">
+            <h1 className="book-list-title">Book List</h1>
+            <div className="book-list-container">
+                {books.map((book, index) => (
+                    <Form key={index} book={book} />
+                ))}
+            </div>
         </div>
     );
 };

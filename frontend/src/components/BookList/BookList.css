@@ -1,3 +1,12 @@
+.book-list-wrapper > h1 {
+    padding: 1rem;
+    text-align: center; /* 제목을 가운데 정렬 */
+}
+
+.book-list-title {
+    margin-bottom: 1.5rem; /* 제목 아래 여백 추가 */
+}
+
 .book-list-container {
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +28,7 @@
         padding: 1rem;
     }
     .book-list-container > div {
-        flex: 0 0 100%;
-        margin: 0.5rem 0;
+        flex: 0 0 calc(100% - 2rem); /* 화면 너비에 따라 카드의 너비를 설정 */
+        margin: 1rem;
     }
 }
