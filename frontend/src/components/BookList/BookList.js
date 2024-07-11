@@ -40,19 +40,26 @@ const BookList = () => {
         }
     ];
 
-    const [books, setBooks] = useState(initialBooks);
+    const [books, setBooks] = useState([]);
+    //setBooks(initialBooks);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             const result = await getBooks();
-    //             setBooks(result);
-    //         } catch (error) {
-    //             console.error(error);
-    //         }
-    //     }
-    //     fetchData();
-    // }, []);
+    useEffect(() => {
+         async function fetchData() {
+             try {
+                 const result = await getBooks();
+                 setBooks(result);
+             } catch (error) {
+                 console.error(error);
+             }
+         }
+         fetchData()
+             .then(() => {
+                 console.log("data fetched successfully");
+             })
+             .catch(error => {
+                 console.error("Failed to fetch data:", error);
+             });
+    }, []);
 
     return (
         <div className="book-list-wrapper">
