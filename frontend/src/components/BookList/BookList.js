@@ -40,14 +40,14 @@ const BookList = () => {
         }
     ];
 
-    const [books, setBooks] = useState([]);
-    //setBooks(initialBooks);
+    const [books, setBooks] = useState(initialBooks);
+
 
     useEffect(() => {
          async function fetchData() {
              try {
                  const result = await getBooks();
-                 setBooks(result);
+                 setBooks([...result]);
              } catch (error) {
                  console.error(error);
              }
