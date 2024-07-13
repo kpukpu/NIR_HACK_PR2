@@ -14,8 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent #NIR_HACK_DIR에 위치함
-
+BASE_DIR = Path(__file__).resolve().parent.parent #NIR_HACK_DIR에 위치함
 
 REACT_BUILD_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
 # Quick-start development settings - unsuitable for production
@@ -28,7 +27,6 @@ SECRET_KEY = 'django-insecure-qy=@8je930r#dp-n!u2ucy55p9pt-s8!qnfwt8_%x1om%9c4g-
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -44,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
-    'delete',
 ]
 
 MIDDLEWARE = [
@@ -55,10 +52,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -92,6 +93,7 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
@@ -122,7 +124,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -141,7 +142,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -153,18 +153,17 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
-    os.path.join(REACT_BUILD_DIR, 'static'),
+    os.path.join(BASE_DIR, "frontend/build/static"),
 ]
 
 # Configure the directory where collectstatic will collect static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
