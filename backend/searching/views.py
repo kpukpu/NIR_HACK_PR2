@@ -79,7 +79,7 @@ def book_insert(request):
         return JsonResponse({'error': 'Invalid request method'}, status=400)
 @api_view(['GET'])
 def book_loan(request):
-    queryset = Book.objects.filter(availability=True)
+    queryset = Book.objects.filter(availability=False)
     serializer = BookSerializer(queryset, many=True)
     return Response(serializer.data)
 
@@ -87,8 +87,8 @@ def book_loan(request):
 def book_return(request):
     try:
         book_ids = request.data.get('book_name', [])
-        books = Book.objects.filter(id__in=book_ids, availability=True)
-        books.update(availability=False)
+        books = Book.objects.filter(id__in=book_ids, availability=False)
+        books.update(availability=True)
         return Response({"message": "Books updated successfully."}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
