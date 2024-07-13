@@ -29,21 +29,51 @@ const books = [
     }
 ];
 
+const CHO_HANGUL = [
+  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ',
+  'ㄹ', 'ㅁ', 'ㅂ','ㅃ', 'ㅅ',
+  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ',
+  'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
+];
+
+const HANGUL_START_CharCode = "가".charCodeAt();
+
+const CHO_PERIOD = Math.floor("까".charCodeAt() - "가".charCodeAt());
+const JUNG_PERIOD = Math.floor("개".charCodeAt() - "가".charCodeAt());
+
+function combine(cho, jung, jong) {
+  return String.fromCharCode(
+    HANGUL_START_CharCode + cho * CHO_PERIOD + jung * JUNG_PERIOD + jong
+  );
+}
+
+function makeRegexByCho(search = "") {
+  const regex = CHO_HANGUL.reduce(
+    (acc, cho, index) =>
+      acc.replace(
+        new RegExp(cho, "g"),
+        `[${combine(index, 0, 0)}-${combine(index + 1, 0, -1)}]` // [시작-끝] -> [가-깋]
+      ),
+    search
+  );
+  return new RegExp(`(${regex})`, "g");
+} //makeRegexByCho('ㄱ') -> 가-깋
+
 function SearchBook() {
     const [searchBook, setSearchBook] = useState("");
 
-    const filteredBooks = books.filter(books =>
-        books.book_name.toLowerCase().includes(searchBook.toLowerCase())
+    const filteredBooks = books.filter(book =>
+        makeRegexByCho(searchBook).test(book.book_name)
     );
 
     return (
         <div className="search-book-container">
-            <h1>Search Book</h1>
+            <h1>도서 검색</h1>
             <input
                 type="text"
                 placeholder="책 제목을 입력하세요..."
                 value={searchBook}
-                onChange={(e) => setSearchBook(e.target.value)}
+                onChange={(e) => setSearchBook(e.target.vaue)}
                 className="search-book-input"
             />
             <div className="search-book-list">
