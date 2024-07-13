@@ -31,13 +31,12 @@ const books = [
 
 const CHO_HANGUL = [
   'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ',
-  'ㄹ', 'ㅁ', 'ㅂ','ㅃ', 'ㅅ',
+  'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
   'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ',
   'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
 ];
 
 const HANGUL_START_CharCode = "가".charCodeAt();
-
 const CHO_PERIOD = Math.floor("까".charCodeAt() - "가".charCodeAt());
 const JUNG_PERIOD = Math.floor("개".charCodeAt() - "가".charCodeAt());
 
@@ -73,7 +72,7 @@ function SearchBook() {
                 type="text"
                 placeholder="책 제목을 입력하세요..."
                 value={searchBook}
-                onChange={(e) => setSearchBook(e.target.vaue)}
+                onChange={(e) => setSearchBook(e.target.value)}
                 className="search-book-input"
             />
             <div className="search-book-list">
