@@ -1,6 +1,10 @@
 from django.urls import path, include
-#from .views import search_books
-#from . import views
-urlpatterns = [ 
-#   path('search/', views.search_books, name='search_books'),
+from .views import book_insert, book_list, book_search
+from . import views
+
+urlpatterns = [
+    #    path('search/', views.book_search, name='search_books'),
+    path('post/', book_insert, name='book_insert'),
+    path('books/', book_list, name='book-list'),
+    path('books/search/', book_search, name='book-search'),
 ]

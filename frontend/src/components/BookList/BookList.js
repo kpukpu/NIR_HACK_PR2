@@ -46,7 +46,7 @@ const BookList = () => {
     useEffect(() => {
          async function fetchData() {
              try {
-                 const result = await getBooks();
+                 const result = await getBooks("윤성우");
                  setBooks([...result]);
              } catch (error) {
                  console.error(error);

@@ -22,11 +22,9 @@ def book_list(request):
 @api_view(['GET'])
 def book_search(request):
     book_name = request.GET.get('book_name', None)
-    if book_name is not None:
-        books = Book.objects.filter(book_name__icontains=book_name)
-        serializer = BookSerializer(books, many=True)
-        return Response(serializer.data)
-    return Response(status=status.HTTP_400_BAD_REQUEST)
+    books = Book.objects.filter(book_name__icontains=book_name)
+    serializer = BookSerializer(books, many=True)
+    return Response(serializer.data)
 
 
 @csrf_exempt
@@ -38,15 +36,15 @@ def book_insert(request):
             print('Received data:', data)
 
             # 데이터 파싱
-            book_name = data.get('bookname')
-            author = data.get('auth')
-            publisher = data.get('publish')
-            publication_date = data.get('_date')
-            availability = data.get('avail')
+            book_name = data.get('book_name')
+            author = data.get('author')
+            publisher = data.get('publisher')
+            publication_date = data.get('publication_date')
+            availability = data.get('availability')
 
             # Book 객체 생성
             new_book = Book(
-                book_number = 1,
+                book_number=2,
                 book_name=book_name,
                 publisher=publisher,
                 availability=availability,
