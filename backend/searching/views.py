@@ -22,9 +22,13 @@ def book_list(request):
 @api_view(['GET'])
 def book_search(request):
     book_name = request.GET.get('book_name', None)
-    books = Book.objects.filter(book_name__icontains=book_name)
-    serializer = BookSerializer(books, many=True)
-    return Response(serializer.data)
+    print(book_name)
+    if book_name is not None:
+        books = Book.objects.filter(book_name__icontains=book_name)
+        serializer = BookSerializer(books, many=True)
+        print(serializer.data)
+        return Response(serializer.data)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 @csrf_exempt
@@ -59,9 +63,9 @@ def book_insert(request):
             )
 
             # 데이터 유효성 검사
-            new_book.full_clean()  
+            new_book.full_clean()
             new_book.save()  # 데이터베이스에 저장
-            
+
             return JsonResponse({'message': 'Book added successfully!'}, status=201)
 
         except ValidationError as e:
@@ -73,7 +77,6 @@ def book_insert(request):
             return JsonResponse({'error': str(e)}, status=500)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
-
 @api_view(['GET'])
 def book_loan(request):
     queryset = Book.objects.filter(availability=True)
@@ -89,3 +92,16 @@ def book_return(request):
         return Response({"message": "Books updated successfully."}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+def book_update(request, pk):
+    try:
+        book = Book.objects.get(pk=pk)
+    except Book.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    serializer = BookSerializer(book, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

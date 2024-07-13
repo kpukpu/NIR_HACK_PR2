@@ -43,4 +43,19 @@ function useSearch(books) {
     };
 }
 
+
+/*function useSearch(books) {
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredBooks = books.filter(book =>
+        makeRegexByCho(searchTerm).test(book.book_name)
+    );
+
+    return {
+        searchTerm,
+        setSearchTerm,
+        filteredBooks
+    };
+}*/
+
 export { useSearch, makeRegexByCho };

@@ -1,0 +1,176 @@
+[33mcommit a8dd6b64e053091ef6202c8a579589d3b163d08c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: 강세희 <sally1397@naver.com>
+Date:   Sat Jul 13 20:15:45 2024 +0900
+
+    네비게이션 바 디자인 수정
+
+[33mcommit f0195cfed55b467e262ef9b171028410ad5010e0[m
+Author: kimseungju <daejo99@naver.com>
+Date:   Sat Jul 13 20:12:05 2024 +0900
+
+    대출 관리
+
+[33mcommit 902e5ba3ebc6627aa58a42ff158056ebc2953d85[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sat Jul 13 19:22:12 2024 +0900
+
+    기본키 자동 증가
+
+[33mcommit 6e172491b366f5613b24830dea858540238360bf[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Sat Jul 13 19:03:37 2024 +0900
+
+    뭔가 많은거 프론트
+
+[33mcommit 1358905b1e88e525cb275049335670612637b571[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sat Jul 13 17:38:42 2024 +0900
+
+    Update BookManagement.js
+
+[33mcommit fcb14190beacaa9ebe05f94bc7a308e183468833[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sat Jul 13 17:37:48 2024 +0900
+
+    insert 추가
+
+[33mcommit 544f704e1506836056804c7f8fcdef494b4b83e6[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sat Jul 13 17:36:04 2024 +0900
+
+    insert 추가
+
+[33mcommit 7b49c2935f60c1fc1bd192c83e4b7d1a170c9507[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sat Jul 13 17:35:31 2024 +0900
+
+    insert 추가
+
+[33mcommit 30fe95471b2d633d28504e4e5ef2bf04873088fe[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Sat Jul 13 17:31:30 2024 +0900
+
+    뭔가 많은거 프론트
+
+[33mcommit ad3fbfe760b46b0c342777e9b39a9a45c371c632[m
+Author: Hye0nw0O <hw4151@naver.com>
+Date:   Sat Jul 13 17:11:59 2024 +0900
+
+    add function
+
+[33mcommit 384e9f43b2143b54a35f66478329c9851d95f028[m
+Author: hilyhily334 <hilyhily334@gmail.com>
+Date:   Sat Jul 13 17:11:19 2024 +0900
+
+    굉장해
+
+[33mcommit b075829c552a11bb51553b6566ed42a20efe5c1e[m
+Merge: 7bff184 a167c91
+Author: Hye0nw0O <hw4151@naver.com>
+Date:   Sat Jul 13 16:54:21 2024 +0900
+
+    Merge branch 'main' of https://github.com/kpukpu/NIR_HACK_PR2
+
+[33mcommit 7bff18469977d7ee5e17b87c99c546de9524a9e9[m
+Author: Hye0nw0O <hw4151@naver.com>
+Date:   Sat Jul 13 16:54:16 2024 +0900
+
+    도서 삭제 기능 추가
+
+[33mcommit a167c9197cf9e7489edb9a4550f7e83ed4866433[m
+Author: 강세희 <sally1397@naver.com>
+Date:   Sat Jul 13 16:26:49 2024 +0900
+
+    도서 검색 시스템 (초성 검색)
+
+[33mcommit 12ee22b526fe5972d0c0e22d420a15a6a5ea389d[m
+Author: 강세희 <sally1397@naver.com>
+Date:   Sat Jul 13 16:21:54 2024 +0900
+
+    도서 검색 시스템 (초성 검색)
+
+[33mcommit 1e9219f2e41ef27bfead71b4fd8f81eb912bf6c2[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Fri Jul 12 16:32:35 2024 +0900
+
+    DB연결
+
+[33mcommit ee77bb01647fd27c0e03082631dbf1793c17c9b1[m
+Merge: 7171807 0e971d1
+Author: kimseungju <daejo99@naver.com>
+Date:   Thu Jul 11 18:46:47 2024 +0900
+
+    도서 정보 삽입 아마 안될거임
+
+[33mcommit 7171807ac9154fca22299b450eefaa27f0f7bf2d[m
+Author: kimseungju <daejo99@naver.com>
+Date:   Thu Jul 11 18:45:53 2024 +0900
+
+    도서 정보 삽입
+
+[33mcommit 0e971d198cd24bb41bfc576b57820a4a7115d7b1[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 18:39:53 2024 +0900
+
+    DB연결
+
+[33mcommit 4e56bce15ee2da8b2c7f06e6fd08a1dffb93765a[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 18:35:55 2024 +0900
+
+    수정
+
+[33mcommit 1f3fdcfed52e6fc4f8fb7be79b4d052bf8ecb72e[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 17:54:23 2024 +0900
+
+    수정
+
+[33mcommit 1a15cece66a0b3c82988ba2acafcbd3e7d672d2e[m
+Author: 강세희 <sally1397@naver.com>
+Date:   Thu Jul 11 17:30:04 2024 +0900
+
+    도서 검색 시스템 (이름 검색만 구현)
+
+[33mcommit 7f140ac61d0ebbd7c01d0a9f4f3a34dad318f9d4[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 16:51:29 2024 +0900
+
+    FormList 기능 구현
+    API 연결 준비
+
+[33mcommit c8544a4ebb0525d5ae67a83e3049b1d1fd06e8db[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 16:20:41 2024 +0900
+
+    NavBar 디자인
+
+[33mcommit 4925f0ff60161382f7be11ec6559d071f8c767e9[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 15:56:12 2024 +0900
+
+    프론트 프로젝트 구조 생성
+
+[33mcommit 48a9b05a4140e7e8ec8d464ae0004681180a4c5a[m
+Author: kimseungju <daejo99@naver.com>
+Date:   Thu Jul 11 15:44:08 2024 +0900
+
+    d-jango settings
+
+[33mcommit c934a0a23ca3a15d6bc95a59fd6f0139c08cb025[m
+Author: Esalyc <yunchancode@naver.com>
+Date:   Thu Jul 11 15:12:05 2024 +0900
+
+    React 프로젝트 생성
+
+[33mcommit 38e484a913c6b7b2694a602fb21f72e32962f69a[m
+Author: kimseungju <daejo99@naver.com>
+Date:   Thu Jul 11 15:09:17 2024 +0900
+
+    장고 프로젝트 생성
+
+[33mcommit 8515cb8867f4b49019bf641074a2653e7c234e65[m
+Author: kpukpu <57974389+kpukpu@users.noreply.github.com>
+Date:   Sun Jul 7 15:31:34 2024 +0900
+
+    Initial commit
