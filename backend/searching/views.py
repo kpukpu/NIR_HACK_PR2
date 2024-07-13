@@ -42,9 +42,15 @@ def book_insert(request):
             publication_date = data.get('publication_date')
             availability = data.get('availability')
 
+            last_book = Book.objects.order_by('-book_number').first()
+            if last_book:
+                new_book_number = last_book.book_number + 1
+            else:
+                new_book_number = 1
+
             # Book 객체 생성
             new_book = Book(
-                book_number=2,
+                book_number=new_book_number,
                 book_name=book_name,
                 publisher=publisher,
                 availability=availability,
