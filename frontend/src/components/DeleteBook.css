@@ -1,0 +1,60 @@
+/* DeleteBook.css */
+.delete-button {
+    background-color: #f56565;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    margin-left: 0.5rem;
+}
+
+.delete-button:hover {
+    background-color: #e53e3e;
+}
+
+.confirm-dialog {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.confirm-message {
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.confirm-button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-yes {
+    background-color: #f56565;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.confirm-yes:hover {
+    background-color: #e53e3e;
+}
+
+.confirm-no {
+    background-color: #a0aec0;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.confirm-no:hover {
+    background-color: #718096;
+}

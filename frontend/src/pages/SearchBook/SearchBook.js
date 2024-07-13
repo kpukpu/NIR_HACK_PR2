@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import Form from "../../components/Form/Form";
-import './SerchBook.css';
+import React, { useState } from 'react';
+import Form from '../../components/Form/Form';
+import ModifyBook from '../../components/ModifyBook';
+import DeleteBook from '../../components/DeleteBook';
+import { useSearch } from '../../components/Search';
+import './SearchBook.css';
 
 const books = [
     {
@@ -29,55 +32,46 @@ const books = [
     }
 ];
 
-const CHO_HANGUL = [
-  'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ',
-  'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ',
-  'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ',
-  'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
-];
-
-const HANGUL_START_CharCode = "가".charCodeAt();
-const CHO_PERIOD = Math.floor("까".charCodeAt() - "가".charCodeAt());
-const JUNG_PERIOD = Math.floor("개".charCodeAt() - "가".charCodeAt());
-
-function combine(cho, jung, jong) {
-  return String.fromCharCode(
-    HANGUL_START_CharCode + cho * CHO_PERIOD + jung * JUNG_PERIOD + jong
-  );
-}
-
-function makeRegexByCho(search = "") {
-  const regex = CHO_HANGUL.reduce(
-    (acc, cho, index) =>
-      acc.replace(
-        new RegExp(cho, "g"),
-        `[${combine(index, 0, 0)}-${combine(index + 1, 0, -1)}]` // [시작-끝] -> [가-깋]
-      ),
-    search
-  );
-  return new RegExp(`(${regex})`, "g");
-} //makeRegexByCho('ㄱ') -> 가-깋
-
 function SearchBook() {
-    const [searchBook, setSearchBook] = useState("");
+    const { searchTerm, setSearchTerm, filteredBooks } = useSearch(books);
+    const [selectedBook, setSelectedBook] = useState(null);
 
-    const filteredBooks = books.filter(book =>
-        makeRegexByCho(searchBook).test(book.book_name)
-    );
+    const putBook = (editedBook) => {
+        // 이 함수는 그대로 두겠습니다. 서버 요청은 여기서 처리될 것입니다.
+        console.log("수정 요청 보내기:", editedBook);
+    };
+
+    const deleteBook = (book) => {
+        console.log("삭제 요청 보내기:", book);
+    };
+
+    const handleBookClick = (book) => {
+        setSelectedBook(selectedBook === book.book_number ? null : book.book_number);
+    };
 
     return (
         <div className="search-book-container">
             <h1>도서 검색</h1>
             <input
                 type="text"
-                placeholder="책 제목을 입력하세요..."
-                value={searchBook}
-                onChange={(e) => setSearchBook(e.target.value)}
-                className="search-book-input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="도서명을 입력하세요"
+                className="search-input"
             />
             <div className="search-book-list">
-                {filteredBooks.map((book, index) => (
-                    <Form key={index} book={book} />
+                {filteredBooks.map((book) => (
+                    <div key={book.book_number} className="book-item">
+                        <div onClick={() => handleBookClick(book)}>
+                            <Form book={book} />
+                        </div>
+                        {selectedBook === book.book_number && (
+                            <div className="book-actions">
+                                <ModifyBook book={book} putBook={putBook} />
+                                <DeleteBook book={book} deleteBook={deleteBook} />
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
