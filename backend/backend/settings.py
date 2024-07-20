@@ -162,9 +162,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
     #os.path.join(BASE_DIR, "frontend/build/static"),
     # 실제 static 파일은 모두 client 측에서 소유
-    os.path.join(STATIC_ROOT, 'client/static')
+    #os.path.join(STATIC_ROOT, 'client/static')
 ]
 
 # Configure the directory where collectstatic will collect static files for production
