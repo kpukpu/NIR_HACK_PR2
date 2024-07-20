@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-qy=@8je930r#dp-n!u2ucy55p9pt-s8!qnfwt8_%x1om%9c4g-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-3-38-214-247.ap-northeast-2.compute.amazonaws.com', '3.38.214.247']
+
 
 # Application definition
 
@@ -157,13 +158,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT_DIR = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
 
 STATICFILES_DIRS = [
     #os.path.join(BASE_DIR, "frontend/build/static"),
     # 실제 static 파일은 모두 client 측에서 소유
-    os.path.join(ROOT_DIR, 'client/static')
+    os.path.join(STATIC_ROOT, 'client/static')
 ]
 
 # Configure the directory where collectstatic will collect static files for production
