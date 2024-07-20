@@ -24,10 +24,9 @@ REACT_BUILD_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
 SECRET_KEY = 'django-insecure-qy=@8je930r#dp-n!u2ucy55p9pt-s8!qnfwt8_%x1om%9c4g-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = FALSE
 
-ALLOWED_HOSTS = ['ec2-3-38-214-247.ap-northeast-2.compute.amazonaws.com', '3.38.214.247']
-
+ALLOWED_HOSTS = ['ec2-13-125-184-6.ap-northeast-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
